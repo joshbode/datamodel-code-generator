@@ -42,7 +42,7 @@ def main(args: Optional[Sequence[str]] = None) -> Exit:
     input_filename = os.path.abspath(os.path.expanduser(args.input))
     parser = Parser(BaseModel, DataModelField, filename=input_filename)
     with args.output as file:
-        parser.parse(file)
+        print(parser.parse(), file=file)
 
     return Exit.OK
 
